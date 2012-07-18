@@ -23,10 +23,11 @@
 	 </tr>
 	 <tr>
 	  <td style="text-align: left;font-size: 10px" valign="top">
-	  	 {{#view Em.MyApp.CreateItemView}}
-	  	 	<img src="style/Samsung Galaxy Tab 750.JPG" height="175" width="110" /><br />
-	  	 	Samsung Galaxy Tab 750
-	  	 {{/view}} 	
+	  	 {{#each contentMobiles}}	   
+	    {{#view Em.ThumbnailPhotoView contentBinding="this" classNames="thumbnailItem"}}
+	    	<img {{bindAttr src="Mobiles"}} height="175" width="110" /><br />
+	    {{/view}}
+	  {{/each}} 	
 	  </td>	
 	 </tr>
 	</table>

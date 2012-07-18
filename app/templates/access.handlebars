@@ -1,0 +1,87 @@
+<div id="top">
+	 {{#if Em.MyApp.user.name}}<h1>Hi! &nbsp;{{Em.MyApp.user.name}}</h1>{{else}}<h1>Welcome to GeekStoP</h1>{{/if}} 
+</div>
+
+<div id="access">
+	<fieldset>
+		<table hspace="200px">
+			<tr>
+				<th>Registration Page</th>
+			</tr>
+			<tr>
+				<td>
+					<label>Title:</label>
+				</td>
+				<td>
+					{{#view Em.MyApp.UsernameField valueBinding="Em.MyApp.user.title" placeholder="Mr./Ms./Mrs." id="title-field"}}
+					{{/view}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Name:</label>
+				</td>
+				<td>
+					{{#view Em.MyApp.UsernameField valueBinding="Em.MyApp.user.name" placeholder="Enter Name" id="username-field"}}
+					{{/view}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Email:</label>
+				</td>
+				<td>
+					{{#view Em.MyApp.UsernameField valueBinding="Em.MyApp.user.email" placeholder="Enter Email id" id="email-field"}}
+					{{/view}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Address:</label>
+				</td>
+				<td>
+					{{#view Em.MyApp.UsernameField valueBinding="Em.MyApp.user.address" placeholder="Enter Address" id="address-field"}}
+					{{/view}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>City:</label>
+				</td>
+				<td>
+					{{#view Em.MyApp.UsernameField valueBinding="Em.MyApp.user.city" placeholder="Enter City" id="city-field"}}
+					{{/view}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>State:</label>
+				</td>
+				<td>
+					{{#view Em.MyApp.UsernameField valueBinding="Em.MyApp.user.state" placeholder="Enter State" id="state-field"}}
+					{{/view}}
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Zip Code:</label>
+				</td>
+				<td>
+					{{#view Em.MyApp.UsernameField valueBinding="Em.MyApp.user.zip" placeholder="Enter ZIP Code" id="zip-field"}}
+					{{/view}}
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+				    {{#view Em.MyApp.AccessButton action="login"}} &nbsp;Submit&nbsp; {{/view}}
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+</div>
+
+<div id="bottom">
+	<!-- MyApp v{{Em.MyApp.VERSION}} -->
+</div>
+

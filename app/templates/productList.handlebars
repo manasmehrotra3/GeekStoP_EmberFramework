@@ -13,7 +13,7 @@
 	 <tr>
 	 <td style="text-align: left;font-size: 10px">
 		  {{#view Em.ThumbnailPhotoView classNames="thumbnailItem" contentBinding="this"}}
-			    {{#each Em.usersController}}	 
+			    {{#each Em.booksController}}	 
 			    	 <img {{bindAttr src="url" id="id"}} {{action "edit" on="click"}} height="175" width="110" />
    				{{/each}}
 		  {{/view}}
@@ -24,7 +24,7 @@
 	 <tr>
 	  <td style="text-align: left;font-size: 10px" valign="top">
 	  	 {{#view Em.ThumbnailPhotoView classNames="thumbnailItem" contentBinding="this"}}
-			    {{#each Em.usersController}}	 
+			    {{#each Em.mobilesController}}	 
 			    	 <img {{bindAttr src="url" id="id"}} {{action "edit" on="click"}} height="175" width="110" />
    				{{/each}}
 		  {{/view}} 	

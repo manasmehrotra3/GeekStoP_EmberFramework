@@ -6,32 +6,50 @@ define([
 	'app/models/item'
 ], function(em, utils, itemControllers, listTemplateSource, Item) {
 
-			my_data= [{url: 'style/Do not Lose Your Mind, Lose Your Weight.JPG',id: 'Do not Lose Your Mind, Lose Your Weight'}, {url: 'style/The Immortals of Meluha.JPG', id: 'The Immortals of Meluha'}, {url: 'style/The Secret of the Nagas.JPG', id: 'The Secret of the Nagas'}, {url: 'style/Chanakya Chant.JPG', id: 'Chanakya Chant'}, {url: 'style/I have a Dream.JPG', id: 'I have a Dream'}, {url: 'style/The Fountainhead.JPG', id: 'The Fountainhead'}, {url: 'style/Darkly Dreaming Dexter.JPG', id: 'Darkly Dreaming Dexter'}, {url: 'style/The Hobbit.JPG', id: 'The Hobbit'}];
+			my_book= [{url: 'style/Do not Lose Your Mind, Lose Your Weight.JPG',id: 'Do not Lose Your Mind, Lose Your Weight'}, {url: 'style/The Immortals of Meluha.JPG', id: 'The Immortals of Meluha'}, {url: 'style/The Secret of the Nagas.JPG', id: 'The Secret of the Nagas'}, {url: 'style/Chanakya Chant.JPG', id: 'Chanakya Chant'}, {url: 'style/I have a Dream.JPG', id: 'I have a Dream'}, {url: 'style/The Fountainhead.JPG', id: 'The Fountainhead'}, {url: 'style/Darkly Dreaming Dexter.JPG', id: 'Darkly Dreaming Dexter'}, {url: 'style/The Hobbit.JPG', id: 'The Hobbit'}];
+			my_mobile= [{url: 'style/Samsung Galaxy Tab 750.JPG', id: 'Samsung Galaxy Tab 750'},{url: 'style/Motorola Defy (Black).JPG', id: 'Motorola Defy (Black)'},{url: 'style/Samsung Galaxy Note.JPG', id: 'Samsung Galaxy Note'},{url: 'style/Motorola RAZR XT910 (Mercury Silver).JPG', id: 'Motorola RAZR XT910 (Mercury Silver)'},{url: 'style/Sony Ericsson Xperia Arc S (Black).JPG', id: 'Sony Ericsson Xperia Arc S (Black)'},{url: 'style/Samsung Galaxy Ace S5830 (Onyx Black).JPG', id:'Samsung Galaxy Ace S5830 (Onyx Black)'},{url: 'style/HTC Wildfire S (Dark Grey).JPG', id: 'HTC Wildfire S (Dark Grey)'},{url: 'style/Micromax Superfone Lite A75 (Charcoal Black).JPG', id: 'Micromax Superfone Lite A75 (Charcoal Black)'}];
 
-			em.User = Em.Object.extend({
+			em.Book = Em.Object.extend({
     			url: null,
     			id: null,
 			});
 			
-			em.usersController = Em.ArrayController.create({
+			em.Mobile = Em.Object.extend({
+    			url: null,
+    			id: null,
+			});
+			
+			em.booksController = Em.ArrayController.create({
     			content: [],
     			initWithDataFromServer: function(hash){
-        		var users = hash.map(function(item){
-            	return em.User.create({
+        		var books = hash.map(function(item){
+            	return em.Book.create({
                 url: item.url,
                 id: item.id,
                   });
                });
-              this.pushObjects(users);
+              this.pushObjects(books);
+              }
+            });
+            
+            em.mobilesController = Em.ArrayController.create({
+    			content: [],
+    			initWithDataFromServer: function(hash){
+        		var mobiles = hash.map(function(item){
+            	return em.Mobile.create({
+                url: item.url,
+                id: item.id,
+                  });
+               });
+              this.pushObjects(mobiles);
               }
             });
 
-       		em.usersController.initWithDataFromServer(my_data);
+       		em.booksController.initWithDataFromServer(my_book);
 			
-			
+			em.mobilesController.initWithDataFromServer(my_mobile);
 					
 			var ListItemsView = em.View.extend({
-				contentMobiles: ['Samsung Galaxy Tab 750','Motorola Defy (Black)','Samsung Galaxy Note','Motorola RAZR XT910 (Mercury Silver)','Sony Ericsson Xperia Arc S (Black)','Samsung Galaxy Ace S5830 (Onyx Black)','HTC Wildfire S (Dark Grey)','Micromax Superfone Lite A75 (Charcoal Black)'],
 				template: em.Handlebars.compile(listTemplateSource),
 			});
 			

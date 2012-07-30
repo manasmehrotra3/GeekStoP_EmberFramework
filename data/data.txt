@@ -1,0 +1,34 @@
+[
+	{
+		"id":"Do not Lose Your Mind, Lose Your Weight",
+		"picture":"style/Do not Lose Your Mind, Lose Your Weight.jpg"
+	},
+	{
+		"id":"The Immortals of Meluha",
+		"picture":"style/The Immortals of Meluha.jpg"
+	},
+	{
+		"id":"The Secret of the Nagas",
+		"picture":"style/The Secret of the Nagas.jpg"
+	},
+	{
+		"id":"Chanakya Chant",
+		"picture":"style/Chanakya Chant.jpg"
+	},
+	{
+		"id":"I have a Dream",
+		"picture":"style/I have a Dream.jpg"
+	},
+	{
+		"id":"The Fountainhead",
+		"picture":"style/The Fountainhead.jpg"
+	},
+	{
+		"id":"Darkly Dreaming Dexter",
+		"picture":"style/Darkly Dreaming Dexter.jpg"
+	},
+	{
+		"id":"The Hobbit",
+		"picture":"style/The Hobbit.jpg"
+	}
+]

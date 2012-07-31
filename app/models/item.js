@@ -5,6 +5,9 @@ define([
 
 	return em.Object.extend({
 		name: "",
+		url: "",
+		price: "",
+	    description: "",
 	});
 
 });

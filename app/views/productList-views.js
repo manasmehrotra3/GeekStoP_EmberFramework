@@ -12,6 +12,7 @@ define([
 			em.Book = Em.Object.extend({
     			url: null,
     			id: null,
+    			price: null,
 			});
 			
 			em.Mobile = Em.Object.extend({
@@ -26,6 +27,7 @@ define([
             	return em.Book.create({
                 url: item.url,
                 id: item.id,
+                price: item.price,
                   });
                });
               this.pushObjects(books);
@@ -54,8 +56,9 @@ define([
 			});
 			
 			em.ThumbnailPhotoView = em.View.extend({
-			   edit: function(evt) {
+			   clickHandler: function(evt) {
                  em.MyApp.item.name= event.target.id;
+                 em.MyApp.item.url= event.target.src;
                  em.MyApp.get("mainView").productDetail();
                  },	
 			});
